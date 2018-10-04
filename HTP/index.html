@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--<script>
+    let clicky_custom = clicky_custom || {};
+    clicky_custom.outbound_disable = 1;
+</script>-->
+
+<head>
+    <meta charset="utf-8"/>
+    <!--<meta name='viewport' content='width=device-width, initial-scale=1'>-->
+    <title data-i18n="app.name"></title>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/> -->
+    <link rel="shortcut icon" type="image/png" href="assets/img/unibook-favicon.ico"/>
+    <link rel="stylesheet" media="all" href="assets/css/bootstrap.min.css" type="text/css" id="link-bootstrap"/>
+    <link rel="stylesheet" href="assets/css/animate.min.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/app.min.css" type="text/css" id="link-app"/>
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/pe-icon-7-stroke.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/page-loading.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+    <link rel="stylesheet" href="assets/default/style.css">
+    <link rel="stylesheet" href="assets/css/jquery-confirm.css">
+    <link rel="stylesheet" href="assets/css/progress.css">
+    <link rel="stylesheet" href="assets/css/hsis.css">
+    <link rel="stylesheet" href="assets/css/file-input.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="assets/css/notify.css">
+    <link rel="stylesheet" href="assets/css/update.css" media="all">
+    <link rel="stylesheet" href="assets/js/cropper/dist/cropper.css">
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.custom.js"></script>
+    <script src="assets/js/progress.js"></script>
+    <script src="assets/js/lib/animsition/animsition.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/additionalFunctions.js"></script>
+    <script src="assets/js/jquery.slimscroll.min.js"></script>
+    <script src="assets/js/jstree.js"></script>
+    <script src="assets/js/hsis.js"></script>
+    <script src="assets/js/events.js"></script>
+    <script src="assets/js/orderby.js"></script>
+    <script src="assets/js/notify.min.js"></script>
+    <script src="assets/js/notification_options.js"></script>
+    <script src="assets/js/jquery-confirm.js"></script>
+    <script src="assets/js/file-input.js"></script>
+    <script src="assets/js/bootstrap-datepicker.js"></script>
+    <script src="assets/js/jquery.mask.min.js"></script>
+    <script src="assets/js/select2.min.js"></script>
+    <script src="assets/js/notify.js"></script>
+    <script src="assets/js/cropper/dist/cropper.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.js"></script>-->
+
+
+    <!--  <script>
+          $(function () {
+              let doc = new jsPDF({
+                  orientation: 'landscape',
+                  unit: 'in',
+                  format: [4, 2]
+              });
+
+              doc.text('Hello World', 10, 10)
+              doc.save('a4.pdf')
+
+              console.log(doc)
+          })
+      </script>-->
+
+    <script type="text/javascript" src="assets/plugins/inputmask/js/jasny-bootstrap.min.js"></script>
+</head>
+<body>
+<div class="progress-backdrop hidden"></div>
+<div id="main-div" class="hidden">
+    <header class="header-upd container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                <a href="#" class="logo-upd">HTP Məlumat Sistemi</a>
+            </div>
+            <div class="col-sm-9 content-upper-header">
+
+
+                <ul class="module-list">
+                    <li><a href="" class="icon-teshkilatistruktur">Təşkilati Struktur</a></li>
+                    <li><a href="" class="icon-kadrlar">Kardlar</a></li>
+                    <li class="active"><a href="" class="icon-telebeler">Tələbələr</a></li>
+                    <li><a href="" class="icon-icon_akamedikqruplar">Akademik qruplar</a></li>
+                    <li><a href="" class="icon-telebeler">Xaricdə oxuyan tələbələr</a></li>
+                    <li><a href="" class="icon-elanlar">Elanlar</a></li>
+                    <li><a href="" class="icon-diplomlar">Diplomlar</a></li>
+                    <li><a href="" class="icon-mtb">MTB</a></li>
+                    <li><a href="" class="icon-soraqchalar">Soraqçalar</a></li>
+                    <li><a href="" class="icon-emrler">Əmrlər</a></li>
+                </ul>
+
+
+                <div class="profile-photo">
+                    <div class="main-img">
+                        <div class="notify-wrapper">
+                            <div class="notification hidden"></div>
+                        </div>
+                        <img src="assets/img/index.png" alt="default-img">
+                        <!--<a href="" class="get_notification_page"><i class="fa fa-bell"></i></a>-->
+                    </div>
+                    <div class="user-info animated">
+                        <div class="big-img no-border-radius">
+                            <img src="assets/img/index.png" alt="" class="no-border-radius"/>
+                        </div>
+                        <div class="user-notify-content">
+                            <h6 data-type="name"><span></span></h6>
+                            <p data-type="current-date"><span></span></p>
+                            <p data-type="role"></p>
+                            <p data-type="org"></p>
+                            <form id="logoutForm" method="POST">
+                                <input type="hidden" name="token">
+                                <button data-i18n="" class="btn btn-default btn-close btn-block btn-power"
+                                        type="submit">
+                                </button>
+                            </form>
+                        </div>
+
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item new-notif active">
+                                <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">Bildirislər</a>
+                            </li>
+                            <li class="nav-item new-notif-setting">
+                                <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Sazlamalar</a>
+                            </li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active" id="profile">
+                                <iframe class="iframe-tab-1" frameborder="0"></iframe>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="buzz">
+                                <iframe class="setting iframeUpdate" frameborder="0"></iframe>
+                            </div>
+                        </div>
+                        <div class="data profile-data"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main-upd">
+        <div class="container-fluid">
+            <div class="row">
+                <!--<div class="col-sm-3 sdie-c left-menu">
+                    <div class="sidebar-upd">
+                        &lt;!&ndash;<div class="side-title-block">
+                            <img src="assets/img/upd/loq.png" alt="">
+                            <p>Azərbaycan Dövlət <br/>Pedaqoji Universiteti</p>
+                        </div>&ndash;&gt;
+                        <div class="side-menu menu-scroll">
+
+                        </div>
+                    </div>
+                </div>-->
+                <div class="col-sm-12 content-part">
+                    <!-- <div class="content-part"> -->
+                    <div class="main-content-upd">
+
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="modal settings-password-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 data-i18n="change_password" class="modal-title">Change password</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label data-i18n="last_password">Last password</label>
+                        <input data-i18n="last_password" type="password" class="form-control last-password required"
+                               placeholder="Last password"/>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="new_password">New password</label>
+                        <input data-i18n="new_password" type="password" class="form-control new-password required"
+                               placeholder="New password"/>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="repeat_password">Repeat password</label>
+                        <input data-i18n="repeat_password" type="password"
+                               class="form-control confirmed-password required" placeholder="Confirm password"/>
+                    </div>
+                </div>
+                <div class="modal-footer flex-img">
+                    <button data-i18n="ok" class="btn btn-primary change-password-submit">OK</button>
+                    <button data-i18n="close" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="advanced-upd">
+        <div class="search-scroll"></div>
+    </div>
+    <div class="foreign-advanced-search">
+        <div class="search-scroll"></div>
+    </div>
+    <div class="user-settings-upd">
+        <div class="search-scroll" style=" position: relative;z-index: 999;">
+            <div class="">
+                <div class="search-butons" style="margin: 0;">
+                    <button data-i18n="ok" class="btn btn-primary change-password-submit">OK</button>
+                    <a href="" data-i18n="close" class="close-settings-upd" placeholder="Bağla">Bağla</a>
+                </div>
+                <div class="">
+                    <h3 data-i18n="change_password" class="panel-title">Change password</h3>
+                </div>
+                <div class="">
+                    <div class="form-group">
+                        <label data-i18n="last_password">Last password</label>
+                        <input data-i18n="last_password" type="password" class="form-control last-password required"
+                               placeholder="Last password"/>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="new_password">New password</label>
+                        <input data-i18n="new_password" type="password" class="form-control new-password required"
+                               placeholder="New password"/>
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="repeat_password">Repeat password</label>
+                        <input data-i18n="repeat_password" type="password"
+                               class="form-control confirmed-password required" placeholder="Confirm password"/>
+                    </div>
+                </div>
+                <!--                     <div class="modal-footer flex-img">
+                                        <button data-i18n="ok"  class="btn btn-primary change-password-submit">OK</button>
+                                        <button data-i18n="close"  type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+                                    </div>
+                 -->
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="col-xs-12 text-center">
+            <img src="assets/img/unibook-logo.svg" alt="MIS">
+        </div>
+    </div>
+</div>
+
+
+
+<img src="assets/img/default.svg" alt="" class="small-loading hidden">
+
+<!--         <div class="cssload-triangles">
+            <div class="cssload-tri cssload-invert"></div>
+            <div class="cssload-tri cssload-invert"></div>
+            <div class="cssload-tri"></div>
+            <div class="cssload-tri cssload-invert"></div>
+            <div class="cssload-tri cssload-invert"></div>
+            <div class="cssload-tri"></div>
+            <div class="cssload-tri cssload-invert"></div>
+            <div class="cssload-tri"></div>
+            <div class="cssload-tri cssload-invert"></div>
+        </div> -->
+<div class="temp-load" style="
+           
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                margin: auto;
+                z-index: 138;
+
+                width: 50px;
+                height: 50px;
+            "><img src="assets/img/unibook_portal.gif" alt="" style="width: 100%"></div>
+<script src="assets/js/page-loading.js"></script>
+<script>
+    /*function startDownload() {
+
+        var url = Hsis.urls.HSIS + 'students/file/1000890?token=' + Hsis.token;
+        window.open(url, 'Download');
+    }
+    setTimeout(startDownload(), 5000);*/
+
+    $(function () {
+        Hsis.i18n(Hsis.lang);
+
+//        $('.iframe-tab-1').attr('src', Hsis.urls.NOTIFICATION + Hsis.token);
+        $('.search-scroll, .view-page').slimScroll();
+
+        // $('.side-menu .search-scroll, .view-page').slimScroll();
+//                $('.content-part').slimScroll();
+
+        $('body').find('.menu-scroll').slimScroll();
+
+
+    });
+    var flag = false;
+    var timer;
+
+    var contentBody = $('.main-content-upd');
+    var smallLoading = $('.small-loading');
+
+    var offset = 0;
+
+
+    $(document).ajaxStart(function (e) {
+//                if($('#main-div').has('.main-content').length < 1) {
+//                    $('.progress-backdrop').removeClass('hidden');
+//                }
+        NProgress.start();
+
+
+    }).ajaxStop(function () {
+
+
+        NProgress.done();
+        $('.progress-backdrop').addClass('hidden');
+
+    });
+
+    $('body').on('click', '#operation_1000028, #operation_1000027', function (e) {
+        contentBody = $('#main-div');
+    });
+
+    $('body').on('click', '.close-settings-upd', function () {
+        $('body').find('.user-settings-upd').css('right', '-100%');
+        return false
+    });
+
+
+    /* var dayOfWeekName = ['Bazar', 'Bazar ertəsi', 'Çərşənbə axşamı', 'Çərşənbə', 'Cümə axşamı', 'Cümə', 'Şənbə'];
+     var monthNames = ["Yanvar", "Fevral", "Mart", "Aprel", "May", "İyun",
+         "İyul", "Avqust", "Sentyabr", "Oktyabr", "Noyabr", "Dekabr"
+     ];
+     var date = new Date();
+     var fullDate = dayOfWeekName[date.getDay()] + ', ' + date.getDate()  + ' ' + monthNames[date.getMonth()];
+     $('.user-notify-content p[data-type="current-date"] span').text(fullDate);*/
+
+
+    /* window.onload = function () {
+         document.getElementById('iframe').scr = ""
+     }*/
+
+
+    function pagination(count, page) {
+        if (count > 10) {
+            $(".custom-pagination").find("li").hide();
+            $(".custom-pagination").find("li:first").show();
+            $(".custom-pagination").find("li:last").show();
+            var plus5 = page + 5;
+            var minus5 = page - 5;
+            if (plus5 <= count) {
+                let last_i = 0;
+                for (let i = page; i <= plus5; i++) {
+                    $(".custom-pagination").find("li:eq(" + i + ")").show();
+                    last_i = i;
+                }
+                if (last_i !== count) {
+                    $(".custom-pagination").find("li:eq(' + last_i + ') a").html("...").show();
+                }
+            }
+            let last_f = 0;
+            for (let f = page; f > minus5; f--) {
+                $(".custom-pagination").find("li:eq(' + f + ')").show();
+                last_f = f;
+            }
+            if (last_f !== count) {
+                $(".custom-pagination").find("li:eq(" + last_f + ") a").html("...").show();
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>
+
